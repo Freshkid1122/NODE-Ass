@@ -69,14 +69,97 @@ const forexData = [
     }
 ];
 
+const countrys = [
+    {
+        name: "United States",
+        currency: "USD",
+        pictures: ["us_flag.jpg"]
+    },
+    {
+        name: "United Kingdom",
+        currency: "GBP",
+        pictures: ["uk_flag.jpg"]
+    },
+    {
+        name: "Japan",
+        currency: "JPY",
+        pictures: ["japan_flag.jpg"]
+    },
+    {
+        name: "New Zealand",
+        currency: "NZD",
+        pictures: ["nz_flag.jpg"]
+    },
+    {
+        name: "Australia",
+        currency: "AUD",
+        pictures: ["australia_flag.jpg"]
+    },
+    {
+        name: "Canada",
+        currency: "CAD",
+        pictures: ["canada_flag.jpg"]
+    },
+    {
+        name: "Switzerland",
+        currency: "CHF",
+        pictures: ["switzerland_flag.jpg"]
+    },
+    {
+        name: "Eurozone",
+        currency: "EUR",
+        pictures: ["euro_flag.jpg"]
+    }
+];
+
+
+const state = [
+    {
+        name: "EUR/USD",
+        forexPairs: ["EUR", "USD"],
+        exchange: "Forex",
+        pictures: ["eur_usd_chart.jpg"]
+    },
+    {
+        name: "EUR/JPY",
+        forexPairs: ["EUR", "JPY"],
+        exchange: "Forex",
+    },
+    {
+        name: "GBP/USD",
+        forexPairs: ["GBP", "USD"],
+        exchange: "Forex",
+    },
+    {
+        name: "USD/JPY",
+        forexPairs: ["USD", "JPY"],
+        exchange: "Forex",
+    }
+]
+
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
 
 app.get('/forexData', (req, res) => {
     res.send(forexData)
 })
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+app.get('/countrys', (req, res) => {
+    res.send(countrys)
 })
+
+app.get('/state', (req, res) => {
+    res.send(state)
+})
+
+
+
+
+// app.get('/', (req, res) => {
+//     res.send('Hello World!')
+// })
 
 
 app.listen(PORT, () => {
